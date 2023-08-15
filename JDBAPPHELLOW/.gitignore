@@ -1,4 +1,4 @@
-# CAP jdbapp
+# CAP JDBAPPHELLOW
 _out
 *.db
 *.sqlite
@@ -29,6 +29,3 @@ mta_archives/
 # IDEs
 # .vscode
 # .idea
-
-# auto generated wildcard
-.env2

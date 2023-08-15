@@ -26,24 +26,6 @@
         "--in-memory?"
       ],
       "problemMatcher": []
-    },
-    {
-      "label": "cds-deploy-to-hana-jdbapp-jdbapp-db",
-      "type": "shell",
-      "command": "cds",
-      "args": [
-        "deploy",
-        "--to",
-        "hana:jdbapp-db",
-        "--no-save"
-      ],
-      "options": {
-        "cwd": "${workspaceFolder}"
-      },
-      "isBackground": true,
-      "problemMatcher": [
-        "$cap-hdi-bind-handler"
-      ]
     }
   ]
 }
