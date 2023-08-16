@@ -14,10 +14,12 @@
   "devDependencies": {
     "@cap-js/sqlite": "^1",
     "@sap/cds-dk": "^7",
-    "@sap/hdi-deploy": "4.8.0"
+    "@sap/hdi-deploy": "4.8.0",
+    "@sap/ux-specification": "^1.108.11"
   },
   "scripts": {
-    "start": "cds-serve"
+    "start": "cds-serve",
+    "watch-josfiori": "cds watch --open josfiori/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "hana": {
@@ -28,5 +30,8 @@
         "kind": "hana"
       }
     }
-  }
+  },
+  "sapux": [
+    "app/josfiori"
+  ]
 }
