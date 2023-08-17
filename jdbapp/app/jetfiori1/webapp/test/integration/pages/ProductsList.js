@@ -8,7 +8,7 @@ sap.ui.define(['sap/fe/test/ListReport'], function(ListReport) {
 
     return new ListReport(
         {
-            appId: 'kont.officesupplies.jetfiori',
+            appId: 'kontkprodns.jetfiori1',
             componentId: 'ProductsList',
             entitySet: 'Products'
         },

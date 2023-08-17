@@ -22,8 +22,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "watch-josfiori": "cds watch --open josfiori/webapp/index.html?sap-ui-xx-viewCache=false",
-    "watch-jetfiori": "cds watch --open jetfiori/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-jetfiori1": "cds watch --open jetfiori1/webapp/index.html?sap-ui-xx-viewCache=false"
   },
   "cds": {
     "hana": {
@@ -36,7 +35,6 @@
     }
   },
   "sapux": [
-    "app/josfiori",
-    "app/jetfiori"
+    "app/jetfiori1"
   ]
 }

@@ -8,7 +8,7 @@ sap.ui.define(['sap/fe/test/ObjectPage'], function(ObjectPage) {
 
     return new ObjectPage(
         {
-            appId: 'jdb.officesupplies.josfiori',
+            appId: 'kontkprodns.jetfiori1',
             componentId: 'Products_textsObjectPage',
             entitySet: 'Products_texts'
         },

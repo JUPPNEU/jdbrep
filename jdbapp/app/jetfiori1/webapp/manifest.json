@@ -1,7 +1,7 @@
 {
   "_version": "1.48.0",
   "sap.app": {
-    "id": "kont.officesupplies.jetfiori",
+    "id": "kontkprodns.jetfiori1",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.10.4",
-      "toolsId": "039f693f-aad9-416f-9649-9c9805d8ff0f"
+      "toolsId": "559bdd23-3ea7-437d-8dd4-7dc1af1cd785"
     },
     "dataSources": {
       "mainService": {
@@ -46,7 +46,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.108.9",
+      "minUI5Version": "1.108.21",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -62,7 +62,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "kont.officesupplies.jetfiori.i18n.i18n"
+          "bundleName": "kontkprodns.jetfiori1.i18n.i18n"
         }
       },
       "": {
@@ -127,7 +127,7 @@
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
-              "editableHeaderContent": false,
+              "editableHeaderContent": true,
               "entitySet": "Products",
               "navigation": {
                 "texts": {
@@ -145,7 +145,7 @@
           "name": "sap.fe.templates.ObjectPage",
           "options": {
             "settings": {
-              "editableHeaderContent": false,
+              "editableHeaderContent": true,
               "entitySet": "Products_texts"
             }
           }
