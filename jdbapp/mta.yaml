@@ -1,7 +1,7 @@
 _schema-version: '3.1'
 ID: jdbapp
 version: 1.0.0
-description: "A simple CAP project."
+description: A simple CAP project.
 parameters:
   enable-parallel-deployments: true
 build-parameters:
@@ -9,6 +9,7 @@ build-parameters:
     - builder: custom
       commands:
         - npx cds build --production
+        - npx -p @sap/cds-dk cds build --production
 modules:
   - name: jdbapp-srv
     type: nodejs
@@ -18,12 +19,13 @@ modules:
     build-parameters:
       builder: npm
     provides:
-      - name: srv-api # required by consumers of CAP services (e.g. approuter)
+      - name: srv-api
         properties:
-          srv-url: ${default-url}
+          srv-url: '${default-url}'
     requires:
       - name: jdbapp-db
-
+      - name: jdbapp-xsuaa
+      - name: jdbapp-destination
   - name: jdbapp-db-deployer
     type: hdb
     path: gen/db
@@ -31,26 +33,54 @@ modules:
       buildpack: nodejs_buildpack
     requires:
       - name: jdbapp-db
-
+      - name: jdbapp-xsuaa
+  - name: jdbapp-approuter
+    type: nodejs
+    path: approuter
+    requires:
+      - name: jdbapp-xsuaa
+      - name: srv-api
+        group: destinations
+        properties:
+          forwardAuthToken: true
+          strictSSL: true
+          name: srv-binding
+          url: '~{srv-url}'
+    build-parameters:
+      requires:
+        - name: jdbapp-app
+          artifacts:
+            - './*'
+          target-path: resources
+  - name: jdbapp-app
+    type: html5
+    path: app
+    build-parameters:
+      supported-platforms: []
 resources:
   - name: jdbapp-db
     type: com.sap.xs.hdi-container
     parameters:
       service: hana
       service-plan: hdi-shared
-
   - name: jdbapp-xsuaa
     type: org.cloudfoundry.managed-service
     parameters:
       service-plan: application
       service: xsuaa
       path: ./xs-security.json
-      config:
+      config: null
       xsappname: 'jdbapp-${space}'
       role-collections:
-         - name: 'Vendor-${space}'
-           description: Read Access
-           role-template-references: $XSAPPNAME.Vendor
-         - name: 'ProcurementManager-${space}'
-           description: All Access
-           role-template-references: $XSAPPNAME.ProcurementManager
+        - name: 'Vendor-${space}'
+          description: Read Access
+          role-template-references: 
+           - $XSAPPNAME.Vendor
+        - name: 'ProcurementManager-${space}'
+          description: All Access
+          role-template-references: $XSAPPNAME.ProcurementManager
+  - name: jdbapp-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+       service: destination
+       service-plan: lite
