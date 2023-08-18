@@ -78,7 +78,8 @@ resources:
            - $XSAPPNAME.Vendor
         - name: 'ProcurementManager-${space}'
           description: All Access
-          role-template-references: $XSAPPNAME.ProcurementManager
+          role-template-references: 
+            - $XSAPPNAME.ProcurementManager
   - name: jdbapp-destination
     type: org.cloudfoundry.managed-service
     parameters:

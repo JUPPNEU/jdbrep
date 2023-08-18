@@ -11,5 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "@sap/approuter": "^14.3.0"
-  }
+  },
+  "engines": {
+     "node": "^14.0.0"
+     }
 }
+
+
