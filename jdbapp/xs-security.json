@@ -1,6 +1,6 @@
 {  
   "xsappname":"jdbapp",
-  "teneant-mode":"dedicated",
+  "tenant-mode":"dedicated",
 
   "scopes": [
     {
