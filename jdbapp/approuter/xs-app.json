@@ -15,7 +15,14 @@
 	"csrfProtection" : false
 	}, 
 	{
-	"source": "/catalog/(.*)",
+		"source": "^/odata/(.*)$",
+		"target": "$1",
+		"localDir": "resources",
+		"authenticationType": "xsuaa",
+		"csrfProtection" : false
+		}, 
+	{
+	"source": "^/catalog/(.*)$",
 	"destination": "srv-binding",
 	"authenticationType": "xsuaa",
 	"csrfProtection" : false
