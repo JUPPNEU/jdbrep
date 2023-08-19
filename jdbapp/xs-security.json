@@ -1,7 +1,11 @@
 {  
   "xsappname":"jdbapp",
   "tenant-mode":"dedicated",
-
+  "oauth2-configuration": {
+    "redirect-uris": [
+      "https://*.us10-001.hana.ondemand.com/**"
+    ]
+  },       
   "scopes": [
     {
       "name": "$XSAPPNAME.Vendor",

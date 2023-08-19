@@ -1,6 +1,7 @@
 using kont.officesupplies as officesupplies from '../db/schema';
 
 service CatalogService {
+ @requires: 'authenticated-user'
  @odata.draft.enabled :true 
  entity Suppliers @(restrict : [
  { grant : [ 'READ' ], to : [ 'Vendor' ] },
@@ -10,5 +11,7 @@ service CatalogService {
  { grant : [ 'READ' ], to : [ 'Vendor' ] },
  { grant : [ '*' ], to : [ 'ProcurementManager' ] } 
  ])as projection on officesupplies.Products;
+
+ function get_supplier_info() returns array of Suppliers;
 
 };

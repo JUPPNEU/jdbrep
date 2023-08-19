@@ -1,5 +1,5 @@
 {	
-	"welcomeFile": "/app/jetfiori1/webapp/index.html",
+	"welcomeFile": "/app/resources/index.html",
 	"authenticationMethod": "route",
 	"sessionTimeout": 30,
 	"logout": {
