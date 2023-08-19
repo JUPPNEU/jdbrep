@@ -36,10 +36,12 @@
     "requires": {
       "db": {
         "kind": "hana"
+      },
+      "uaa":{
+        "kind":"xsuaa"
       }
     }
-    
-  },
+   },
   "sapux": [
     "app/jetfiori1",
     "app/resources"
