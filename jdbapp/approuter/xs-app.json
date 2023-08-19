@@ -11,8 +11,16 @@
 	"source": "^/app/(.*)$",
 	"target": "$1",
 	"localDir": "resources",
-	"authenticationType": "xsuaa"
+	"authenticationType": "xsuaa",
+	"csrfProtection" : false
 	}, 
+	{
+		"source": "^/app/(.*)$",
+		"target": "$1",
+		"localDir": "jetfiori1",
+		"authenticationType": "xsuaa",
+		"csrfProtection" : false
+		},
 	{
 	"source": "/catalog/(.*)",
 	"destination": "srv-binding",
