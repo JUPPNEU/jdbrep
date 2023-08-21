@@ -12,9 +12,4 @@ applications:
   path: gen/srv
   memory: 256M
   buildpack: nodejs_buildpack
-
-  env:
-    SAP_JWT_TRUST_ACL: >
-      [
-        {"clientid":"*", "identityzone":"*"}
-      ]
+ 
