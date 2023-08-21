@@ -14,7 +14,13 @@
     {
       "name": "$XSAPPNAME.ProcurementManager",
       "description": "ProcurementManager"
-    }
+    },
+    {
+      "name": "$XSAPPNAME.jobscheduler",
+      "description": "SAP Job Scheduling service Scope",
+      "grant-as-authority-to-apps": [
+      "$XSSERVICENAME(jobscheduler)" ]
+     }
   ],
   "attributes": [],
   "role-templates": [
@@ -23,6 +29,14 @@
       "description": "generated",
       "scope-references": [
         "$XSAPPNAME.Vendor"
+      ],
+      "attribute-references": []
+    },
+    {
+      "name": "jobscheduler",
+      "description": "generated",
+      "scope-references": [
+        "$XSAPPNAME.jobscheduler"
       ],
       "attribute-references": []
     },
